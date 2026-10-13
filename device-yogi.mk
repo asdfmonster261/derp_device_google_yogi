@@ -217,12 +217,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.extensions.computercontrol
 
-# EuiccPolicy feeds partner customisation to the LPA and disables Google's one when
-# GMS is absent, so it is what decides which LPA serves. LineageOS ships it but no
-# product pulls it in, since it only makes sense on a device that has an eUICC.
-PRODUCT_PACKAGES += \
-    EuiccPolicy
-
 # EuiccGoogle is presigned, so it cannot pick up a signature|privileged permission by
 # signature the way a platform-signed app does, and stock keeps its allowlist in a gms
 # file. With ro.control_privapp_permissions=enforce the first missing entry throws out
@@ -255,12 +249,6 @@ PRODUCT_COPY_FILES += \
 # libse-gto-hal.conf is already among the blobs.
 PRODUCT_PACKAGES += \
     android.hardware.secure_element-service.thales
-
-# OpenEUICC is the LPA for anyone not running GMS. It declares a lower intent-filter
-# priority than Google's, so where both are enabled the stock one serves and this takes
-# over when EuiccPolicy disables it.
-PRODUCT_PACKAGES += \
-    OpenEUICC
 
 # eSIM. The eUICC sits behind ISecureElement/SIM1, so an LPA needs the OMAPI UICC
 # reader and EuiccManager exposed. Stock keeps the OMAPI declaration in vendor and the
