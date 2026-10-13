@@ -11,4 +11,11 @@
 
     <!-- Deliberately overrides the stock-ported true in FrameworkResOverlayVendorYogi. -->
     <bool name="config_isDesktopModeSupported">false</bool>
+
+    <!-- Empty on purpose. DerpFest's default certified props are a Pixel 10 Pro XL
+         (mustang) identity, which Play Store reports until a PIF is imported, and the
+         device packs delivered on that basis crash Google Camera at startup. With the
+         array empty Play reports this build's own identity instead. Inert on LineageOS,
+         whose framework does not declare the resource. -->
+    <string-array name="config_certifiedBuildProperties" />
 </resources>
