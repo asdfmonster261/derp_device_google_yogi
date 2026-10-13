@@ -12,6 +12,12 @@
     <!-- Deliberately overrides the stock-ported true in FrameworkResOverlayVendorYogi. -->
     <bool name="config_isDesktopModeSupported">false</bool>
 
+    <!-- Fetch the certified props from our own fork, which serves this
+         device's real identity generated from the current stock OTA.
+         The upstream default is a Pixel 10 Pro XL, which Play delivers
+         mustang device packs for. -->
+    <string name="config_pifUpdateUrl" translatable="false">https://raw.githubusercontent.com/asdfmonster261/android_vendor_certification/17/gms_certified_props.json</string>
+
     <!-- The device's own stable identity, in place of DerpFest's Pixel 10 Pro XL
          default, which made Play deliver mustang device packs that crash Google
          Camera at startup. The spoof therefore reports this build as itself. Fields
