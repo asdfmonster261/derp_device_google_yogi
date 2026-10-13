@@ -966,7 +966,6 @@ vendor/lib64/soundfx/libreverbaidl.so
 vendor/lib64/soundfx/libvisualizeraidl.so
 vendor/etc/sysconfig/vendor-apex-allowlist-lyric.xml
 vendor/etc/res/images/charger/battery_overheat.png
-vendor/etc/res/images/charger/main_font.png
 vendor/lib64/hw/sensors.dynamic_sensor_hal.so
 vendor/lib64/libhidparser.so
 vendor/bin/flood.control.hal
