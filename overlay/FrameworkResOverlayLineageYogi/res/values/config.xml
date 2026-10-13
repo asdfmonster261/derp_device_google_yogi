@@ -12,10 +12,21 @@
     <!-- Deliberately overrides the stock-ported true in FrameworkResOverlayVendorYogi. -->
     <bool name="config_isDesktopModeSupported">false</bool>
 
-    <!-- Empty on purpose. DerpFest's default certified props are a Pixel 10 Pro XL
-         (mustang) identity, which Play Store reports until a PIF is imported, and the
-         device packs delivered on that basis crash Google Camera at startup. With the
-         array empty Play reports this build's own identity instead. Inert on LineageOS,
-         whose framework does not declare the resource. -->
-    <string-array name="config_certifiedBuildProperties" />
+    <!-- The device's own stable identity, in place of DerpFest's Pixel 10 Pro XL
+         default, which made Play deliver mustang device packs that crash Google
+         Camera at startup. The spoof therefore reports this build as itself. Fields
+         that change with every OTA (fingerprint, build ID, incremental) are left to
+         the build props, which already carry them. -->
+    <string-array name="config_certifiedBuildProperties">
+        <item>MANUFACTURER:Google</item>
+        <item>MODEL:Pixel 11 Pro Fold</item>
+        <item>BRAND:google</item>
+        <item>PRODUCT:yogi</item>
+        <item>DEVICE:yogi</item>
+        <item>HARDWARE:yogi</item>
+        <item>VERSION.RELEASE:17</item>
+        <item>TYPE:user</item>
+        <item>TAGS:release-keys</item>
+        <item>VERSION.DEVICE_INITIAL_SDK_INT:37</item>
+    </string-array>
 </resources>
